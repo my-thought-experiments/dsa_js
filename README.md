@@ -9,20 +9,16 @@ npm run test
 
 ## Data Structures
 
-- [] String 
+- [x] String
 
-- [] Array
+- [ ] Array
 
-- [] Stack
+- [ ] Stack
 
-- [] Queue
+- [ ] Queue
 
-- [] Linked List
+- [ ] Linked List
 
 ## Algorithms
 
-- [] Fibonacci series
-
-- [] Palindrome
-
-- [] 
+- [ ] Fibonacci series
