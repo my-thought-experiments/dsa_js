@@ -21,4 +21,8 @@ npm run test
 
 ## Algorithms
 
+- [ ] Sorting
+
+- [ ] Searching
+
 - [ ] Fibonacci series
