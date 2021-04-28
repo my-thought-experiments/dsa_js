@@ -1,0 +1,7 @@
+const funcName = require('../template')
+
+describe('funcName string', () => {
+  test('funcName function is defined', () => {
+    expect(funcName).toBeDefined();
+  });
+})

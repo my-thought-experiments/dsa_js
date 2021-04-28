@@ -1,0 +1,32 @@
+/**
+ * 
+ * 
+ * E.g.
+ * 
+ */
+
+/**
+ * Solution #1
+ */
+function solution_1() {
+  
+}
+
+/**
+ * Solution #2
+ */
+function solution_2() {
+
+}
+
+function funcName(solutionType) {
+  switch(solutionType) {
+    case 1:
+      return solution_1()
+
+    case 2:
+      return solution_2()
+  }
+}
+
+module.exports = funcName
