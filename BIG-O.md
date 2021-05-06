@@ -20,13 +20,14 @@ Simplified analysis of an algorithm's efficiency.
     O(1) < O(Log n) < O(n) < O(n Log n) < O(n^2) < O(2^n) < O(n!)
 
     **In Table form:**
-    | Teams | Notation |
-    |:---|:---|
-    | Excellent | O(1) |
-    | Good | O(Log n) |
-    | Fair | O(n) |
-    | Bad | O(n Log n) |
-    | Horrible | O(n^2) / O(2^n) / O(n!) |
+    | Teams | Notation | Comments |
+    |:---|:---|:---|
+    | Excellent | O(1) | Constant |
+    | Good | O(Log n) | Logarithmic |
+    | Fair | O(n) | Linear |
+    | Bad | O(n Log n) | 
+    | Horrible | O(n^2) / O(2^n) | Exponential |
+    |  | O(n!) | Factorial |
 
 ### Time
 
@@ -45,7 +46,9 @@ Simplified analysis of an algorithm's efficiency.
     ```
     Total time = O(1) + O(1) + O(1) = O(1)
 
-2. **Linear time**: n * O(1) = O(n)
+2. **Logarithmic time**: O(Log n)
+
+3. **Linear time**: n * O(1) = O(n)
 
     For eg.
 
@@ -61,7 +64,7 @@ Simplified analysis of an algorithm's efficiency.
     ```
     Total time = O(1) + O(n) = O(n)
 
-3. **Quadratic time**: O(n^2)
+4. **Quadratic time**: O(n^2)
 
     For eg.
 
@@ -99,3 +102,7 @@ Simplified analysis of an algorithm's efficiency.
       // O(n^2)
     ```
     Total time = O(1) + O(Log n) + O(n^2) = O(n^2)
+
+## References
+
+* [Desmos](https:/www.desmos.com)
