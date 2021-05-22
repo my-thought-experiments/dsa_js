@@ -31,6 +31,11 @@ Simplified analysis of an algorithm's efficiency.
 
 ### Time
 
+Rules
+
+  1. Find the fastest growing term
+  2. Take out the co-efficient
+
 1. **Constant time**: Independent of input size, n. Hence, O(1)
 
     For eg.
@@ -53,6 +58,10 @@ Simplified analysis of an algorithm's efficiency.
     For eg.
 
     ```
+    T = an + b = O(n)
+    ```
+
+    ```
     for x in rage (0, n): // O(n)
       print x; // O(1)
     ```
@@ -67,6 +76,10 @@ Simplified analysis of an algorithm's efficiency.
 4. **Quadratic time**: O(n^2)
 
     For eg.
+
+    ```
+    T = cn^2 + dn + e = O(n^2)
+    ```
 
     ```
     for x in rage (0, n): // O(n)
@@ -102,6 +115,32 @@ Simplified analysis of an algorithm's efficiency.
       // O(n^2)
     ```
     Total time = O(1) + O(Log n) + O(n^2) = O(n^2)
+
+
+## Algorithms
+
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Algorithm</th>
+      <th colspan="3">Time Complixity</th>
+    </tr>
+    <tr>
+      <th>Worst</th>
+      <th>Mid</th>
+      <th>Best</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>asas</td>
+      <td>Worst</td>
+      <td>Mid</td>
+      <td>Best</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## References
 
