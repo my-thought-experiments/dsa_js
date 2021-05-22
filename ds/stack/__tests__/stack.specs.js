@@ -1,7 +1,7 @@
 const Stack = require('../stack')
 
-describe('stack', () => {
-  test('should return the position of the new added element to the stack', () => {
+describe('DS :: Stack', () => {
+  test('should return the position of the newly added an element to the stack', () => {
     const stk = new Stack()
     expect(stk.push(10)).toBe(0)
     expect(stk.push(20)).toBe(1)
@@ -68,4 +68,11 @@ describe('stack', () => {
     expect(stk.isEmpty()).toBeTruthy()
   })
 
+  test('should return the size of the stack', () => {
+    const stk = new Stack()
+    stk.push(10)
+    stk.push(20)
+    stk.push(30)
+    expect(stk.size()).toBe(3)
+  })
 })
