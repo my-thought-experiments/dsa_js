@@ -32,6 +32,10 @@ class Stack {
   isEmpty() {
     return this.count === 0
   }
+
+  size() {
+    return this.count
+  }
 }
 
 module.exports = Stack
