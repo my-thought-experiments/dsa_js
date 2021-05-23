@@ -15,8 +15,9 @@ class Queue {
   }
 
   isEmpty() {
-    return this.elements.length === 0
+    return this.size() === 0
   }
+
   front() {
     return this.elements[0]
   }
