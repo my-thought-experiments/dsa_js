@@ -2,10 +2,11 @@ class Node {
   constructor(data) {
     this.data = data
     this.next = null
+    this.prev = null
   }
 }
 
-class SinglyLinkedList {
+class DoublyLinkedList {
   constructor() {
     this.head = null
     this.tail = null
@@ -26,71 +27,69 @@ class SinglyLinkedList {
     let newNode = new Node(data)
 
     if (!this.head) {
-      // List is empty
       this.head = newNode
       this.tail = this.head
     } else {
-      // List is not empty
       this.tail.next = newNode
+      newNode.prev = this.tail
       this.tail = newNode
     }
-    
+
     this.length++
+
     return this
   }
 
-  
   pop() {
     if (!this.head) {
       throw Error('Nothing to pop')
     }
-    let current = this.head
-    let newTail = current
 
-    while(current.next) {
-      newTail = current
-      current = current.next
-    }
+    let current = this.tail
 
-    this.tail = newTail
-    this.tail.next = null
-    this.length--
-
-    if (this.length === 0) {
+    if (this.length === 1) {
       this.head = null
       this.tail = null
+    } else {
+      this.tail = current.prev
+      this.tail.next = null
+      current.prev = null
     }
 
+    this.length--
     return current
   }
 
-  // Remove element from beginning of the Linked list
-  shift() { // Shift -> deleteFromFront
+  // Remove a node from the beginning
+  shift() {
     if (!this.head) {
       throw Error('Nothing to shift')
     }
 
     const current = this.head
-    this.head = current.next
-    this.length--
 
-    if (this.length === 0) {
+    if (this.length === 1) {
+      this.head = null
       this.tail = null
+    } else {
+      this.head = current.next
+      this.head.prev = null
+      current.next = null
     }
 
+    this.length--
     return current
   }
 
-  // Add new node to beginning
+  // Add new node in the beginning
   unshift(data) {
     let newNode = new Node(data)
 
     if (!this.head) {
-      // List is empty
       this.head = newNode
       this.tail = this.head
     } else {
-      // List is not empty
+      this.head.prev = newNode
       newNode.next = this.head
       this.head = newNode
     }
@@ -104,15 +103,36 @@ class SinglyLinkedList {
       return false
     }
 
-    let count = 0
-    let current = this.head
+    let current
 
-    while (count !== index) {
-      current = current.next
-      count++
+    if (index <= this.length / 2) {
+      let count = 0
+      current = this.head
+  
+      while(count !== index) {
+        current = current.next
+        count++
+      }
+    } else {
+      let count = this.length - 1
+      current = this.tail
+
+      while(count !== index) {
+        current = current.prev
+        count--
+      }
     }
 
     return current
+  }
+
+  set(index, data) {
+    let foundNode = this.get(index)
+    if (foundNode) {
+      foundNode.data = data
+      return true
+    }
+    return false
   }
 
   insert(index, data) {
@@ -135,13 +155,14 @@ class SinglyLinkedList {
 
     let afterNode = beforeNode.next
     beforeNode.next = newNode
+    newNode.prev = beforeNode
     newNode.next = afterNode
+    afterNode.prev = newNode
     
     this.length++
     return true
   }
 
-  // Remove a node from specific position
   remove(index) {
     if (index < 0 || index >= this.length) {
       return false
@@ -155,56 +176,20 @@ class SinglyLinkedList {
       return this.pop()
     }
 
-    let prev = this.get(index - 1)
-    let removed = prev.next
-    prev.next = removed.next
+    let removeNode = this.get(index - 1)
+    let beforeNode = removeNode.prev
+    let afterNode = removeNode.next
+    beforeNode.next = afterNode
+    afterNode.prev = beforeNode
+    removeNode.next = null
+    removeNode.prev = null
+
     this.length--
-
-    return removed
-  }
-
-  // edit data by position
-  set(index, data) {
-    let foundNode = this.get(index)
-    if (foundNode) {
-      foundNode.data = data
-      return true
-    }
-    return false
-  }
-
-  reverse() {
-    let node = this.head
-    this.head = this.tail
-    this.tail = node
-
-    let next
-    let prev = null
-
-    for (let i = 0; i < this.length; i++) {
-      next = node.next
-      node.next = prev
-      prev = node
-      node = next
-    }
-
-    return this
-  }
-
-  print() {
-    let arr = []
-    let current = this.head
-
-    while(current) {
-      arr.push(current.data)
-      current = current.next
-    }
-
-    return arr
+    return removeNode
   }
 }
 
 module.exports = {
   Node,
-  SinglyLinkedList
+  DoublyLinkedList
 }
