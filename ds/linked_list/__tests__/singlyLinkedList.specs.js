@@ -116,6 +116,41 @@ describe('DS :: Linked List :: Singly Linked List', () => {
     }
   })
 
+  test('should test singly listed list delete operation by position', () => {
+    let list = new SinglyLinkedList()
+    list.insertFromEnd(10)
+    list.insertFromEnd(20)
+    list.insertFromEnd(30)
+    list.insertFromEnd(40)
+    list.insertFromEnd(50)
+    list.insertFromEnd(60)
+    list.insertFromEnd(70)
+    list.insertFromEnd(80)
+    expect(list.size()).toBe(8)
+
+    expect(list.deleteByPosition(-1)).toBeFalsy()
+    expect(list.deleteByPosition(10)).toBeFalsy()
+    
+    const element1 = list.deleteByPosition(0)
+    expect(list.size()).toBe(7)
+    expect(element1.data).toBe(80)
+    expect(element1.next).toBeNull()
+    expect(list.tail.data).toBe(70)
+    expect(list.tail.next).toBeNull()
+
+    const element2 = list.deleteByPosition(7)
+    expect(list.size()).toBe(7)
+    expect(list.tail.data).toBe(70)
+    expect(list.tail.next).toBeNull()
+
+    const element3 = list.deleteByPosition(3)
+    expect(list.size()).toBe(6)
+    expect(element3.data).toBe(40)
+    expect(element3.next).not.toBeNull()
+    expect(list.tail.data).toBe(70)
+    expect(list.tail.next).toBeNull()
+  })
+
   test('should test singly listed list get operation', () => {
     let list = new SinglyLinkedList()
     list.insertFromEnd(10)
