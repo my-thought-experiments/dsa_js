@@ -22,7 +22,7 @@ class SinglyLinkedList {
     this.length = 0
   }
 
-  insertFromEnd(data) {
+  push(data) {
     let newNode = new Node(data)
 
     if (!this.head) {
@@ -39,8 +39,50 @@ class SinglyLinkedList {
     return this
   }
 
-  // Unshift
-  insertFromFront(data) {
+  
+  pop() {
+    if (!this.head) {
+      throw Error('Nothing to pop')
+    }
+    let current = this.head
+    let newTail = current
+
+    while(current.next) {
+      newTail = current
+      current = current.next
+    }
+
+    this.tail = newTail
+    this.tail.next = null
+    this.length--
+
+    if (this.length === 0) {
+      this.head = null
+      this.tail = null
+    }
+
+    return current
+  }
+
+  // Remove element from beginning of the Linked list
+  shift() { // Shift -> deleteFromFront
+    if (!this.head) {
+      throw Error('Nothing to shift')
+    }
+
+    const current = this.head
+    this.head = current.next
+    this.length--
+
+    if (this.length === 0) {
+      this.tail = null
+    }
+
+    return current
+  }
+
+  // Add new node to beginning
+  unshift(data) {
     let newNode = new Node(data)
 
     if (!this.head) {
@@ -57,82 +99,60 @@ class SinglyLinkedList {
     return this
   }
 
-  insertByPosition(index, data) {
+  get(index) {
+    if (index < 0 || index >= this.length) {
+      return false
+    }
+
+    let count = 0
+    let current = this.head
+
+    while (count !== index) {
+      current = current.next
+      count++
+    }
+
+    return current
+  }
+
+  insert(index, data) {
     if (index < 0 || index > this.length) {
       return false
     }
 
     if (index === this.length) {
-      this.insertFromEnd(data)
+      this.push(data)
       return true
     }
 
     if (index === 0) {
-      this.insertFromFront(data)
+      this.unshift(data)
       return true
     }
 
-    let prev = this.get(index - 1)
+    let prevNode = this.get(index - 1)
     let newNode = new Node(data)
 
-    let temp = prev.next
-    prev.next = newNode
+    let temp = prevNode.next
+    prevNode.next = newNode
     newNode.next = temp
     
     this.length++
     return true
   }
 
-  deleteFromFront() {
-    if (!this.head) {
-      throw Error('Queue is empty, nothing to delete')
-    }
-
-    const currentHead = this.head
-    this.head = currentHead.next
-    this.length--
-    if (this.length === 0) {
-      this.tail = null
-    }
-    return currentHead
-  }
-
-  // Shift
-  deleteFromEnd() {
-    if (!this.head) {
-      throw Error('Queue is empty, nothing to delete')
-    }
-    let current = this.head
-    let prev = current
-
-    while(current.next) {
-      prev = current
-      current = current.next
-    }
-
-    this.tail = prev
-    this.tail.next = null
-    this.length--
-
-    if (this.length === 0) {
-      this.head = null
-      this.tail = null
-    }
-
-    return current
-  }
-
-  deleteByPosition(index) {
+  // Remove a node from specific position
+  remove(index) {
     if (index < 0 || index >= this.length) {
       return false
     }
 
     if (index === 0) {
-      return this.deleteFromEnd()
+      return this.shift()
     }
 
     if (index === this.length - 1) {
-      return this.deleteFromFront()
+      return this.pop()
     }
 
     let prev = this.get(index - 1)
@@ -143,22 +163,7 @@ class SinglyLinkedList {
     return removed
   }
 
-  get(index) {
-    if (index < 0 || index >= this.length) {
-      return null
-    }
-
-    let count = 0
-    let currentHead = this.head
-
-    while (count !== index) {
-      currentHead = currentHead.next
-      count++
-    }
-
-    return currentHead
-  }
-
+  // edit data by position
   set(index, newData) {
     if (index < 0) {
       return null
