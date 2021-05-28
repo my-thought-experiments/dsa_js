@@ -118,9 +118,9 @@ describe('DS :: Linked List :: Singly Linked List', () => {
     list.push(50)
     expect(list.size()).toBe(5)
 
-    const poppedElement = list.pop()
+    const element = list.pop()
     expect(list.size()).toBe(4)
-    expect(poppedElement.data).toBe(50)
+    expect(element.data).toBe(50)
     expect(list.head.data).toBe(10)
     expect(list.head.next).not.toBeNull()
     expect(list.tail.data).toBe(40)
