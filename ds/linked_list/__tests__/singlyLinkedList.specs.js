@@ -35,6 +35,8 @@ describe('DS :: Linked List :: Singly Linked List', () => {
     expect(list.head.next.next.next).toBeNull()
     expect(list.tail.data).toBe(30)
     expect(list.tail.next).toBeNull()
+
+    expect(list.print()).toEqual(expect.arrayContaining([10, 20, 30]))
   })
 
   test('should test singly listed list insert operation from front', () => {
@@ -65,6 +67,8 @@ describe('DS :: Linked List :: Singly Linked List', () => {
     expect(list.head.next.next.next).toBeNull()
     expect(list.tail.data).toBe(10)
     expect(list.tail.next).toBeNull()
+
+    expect(list.print()).toEqual(expect.arrayContaining([10, 20, 30]))
   })
 
   test('should test singly listed list insert operation by position', () => {
@@ -82,6 +86,8 @@ describe('DS :: Linked List :: Singly Linked List', () => {
     expect(list.get(2).data).toBe(30)
     expect(list.get(3).data).toBe(40)
     expect(list.get(3).next).toBeNull()
+
+    expect(list.print()).toEqual(expect.arrayContaining([10, 20, 30, 40]))
   })
 
   test('should test singly listed list delete operation from front', () => {
@@ -186,37 +192,17 @@ describe('DS :: Linked List :: Singly Linked List', () => {
     expect(list.get(2).data).toBe(100)
   })
 
-  // test('should test singly listed list delete operation from end', () => {
-  //   let list = new SinglyLinkedList()
-  //   list.insertFromEnd(10)
-  //   list.insertFromEnd(20)
-  //   list.insertFromEnd(30)
-  //   list.insertFromEnd(40)
-  //   list.insertFromEnd(50)
-  //   expect(list.size()).toBe(5)
+  test('should test singly linked list reverse operation', () => {
+    let list = new SinglyLinkedList()
+    list.insertFromEnd(10)
+    list.insertFromEnd(20)
+    list.insertFromEnd(30)
+    list.insertFromEnd(40)
+    expect(list.print()).toEqual(expect.arrayContaining([10, 20, 30, 40]))
 
-  //   // list.deleteFromEnd()
-  //   // expect(list.size()).toBe(4)
-  //   // expect(list.head.data).toBe(20)
-  //   // expect(list.head.next).not.toBeNull()
-  //   // expect(list.tail.data).toBe(50)
-  //   // expect(list.tail.next).toBeNull()
-
-  //   // list.deleteFromEnd()
-  //   // list.deleteFromEnd()
-  //   // list.deleteFromEnd()
-  //   // list.deleteFromEnd()
-  //   // expect(list.size()).toBe(0)
-  //   // expect(list.head).toBeNull()
-  //   // expect(list.tail).toBeNull()
-    
-  //   // try {
-  //   //   list.deleteFromEnd()
-  //   // } catch(error) {
-  //   //   expect(error).toBeInstanceOf(Error)
-  //   //   expect(error).toHaveProperty('message', 'Queue is empty, nothing to delete');
-  //   // }
-  // })
+    list.reverse()
+    expect(list.print()).toEqual(expect.arrayContaining([40, 30, 20, 10]))
+  })
 
   test('should test singly linked list clear operation', () => {
     let list = new SinglyLinkedList()
