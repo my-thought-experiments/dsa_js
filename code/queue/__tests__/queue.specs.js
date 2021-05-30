@@ -1,6 +1,6 @@
 const Queue = require('../queue')
 
-describe('DS :: Queue', () => {
+describe('Queue > Using Array', () => {
   test('should return the position of the new enqueue an element to the queue', () => {
     const q = new Queue()
     q.enqueue(10)

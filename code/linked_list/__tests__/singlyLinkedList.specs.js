@@ -1,6 +1,6 @@
 const { Node, SinglyLinkedList } = require('../singlyLinkedList')
 
-describe('DS :: Linked List :: Singly Linked List', () => {
+describe('LinkedList > Singly Linked List', () => {
   test('should test singly listed list node class', () => {
     let node1 = new Node(10)
     expect(node1.data).toBe(10)

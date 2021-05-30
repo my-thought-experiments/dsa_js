@@ -1,6 +1,6 @@
 const { Node, DoublyLinkedList } = require('../doublyLinkedList')
 
-describe('DS :: Linked List :: Doubly Linked List', () => {
+describe('LinkedList > Doubly Linked List', () => {
   test('should test doubly listed list node class', () => {
     let node1 = new Node(10)
     expect(node1.data).toBe(10)
@@ -131,38 +131,6 @@ describe('DS :: Linked List :: Doubly Linked List', () => {
       expect(error).toHaveProperty('message', 'Nothing to shift');
     }
   })
-
-  // test('should push element to doubly listed list', () => {
-  //   let list = new DoublyLinkedList()
-  //   expect(list.head).toBeNull()
-  //   expect(list.tail).toBeNull()
-
-  //   list.push(10)
-  //   expect(list.size()).toBe(1)
-  //   expect(list.head.data).toBe(10)
-  //   expect(list.head.next).toBeNull()
-  //   expect(list.tail.data).toBe(10)
-  //   expect(list.tail.next).toBeNull()
-
-  //   list.push(20)
-  //   expect(list.size()).toBe(2)
-  //   expect(list.head.data).toBe(10)
-  //   expect(list.head.next.data).toBe(20)
-  //   expect(list.head.next.next).toBeNull()
-  //   expect(list.tail.data).toBe(20)
-  //   expect(list.tail.next).toBeNull()
-
-  //   list.push(30)
-  //   expect(list.size()).toBe(3)
-  //   expect(list.head.data).toBe(10)
-  //   expect(list.head.next.data).toBe(20)
-  //   expect(list.head.next.next.data).toBe(30)
-  //   expect(list.head.next.next.next).toBeNull()
-  //   expect(list.tail.data).toBe(30)
-  //   expect(list.tail.next).toBeNull()
-
-  //   expect(list.print()).toEqual(expect.arrayContaining([10, 20, 30]))
-  // })
 
   test('should unshift (add element in the beginning) of the doubly listed list', () => {
     let list = new DoublyLinkedList()
