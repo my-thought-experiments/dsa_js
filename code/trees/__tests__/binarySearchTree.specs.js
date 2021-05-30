@@ -175,4 +175,107 @@ describe('Trees > Binary Search Tree', () => {
       expect(error).toHaveProperty('message', 'Found duplicate value')
     }
   })
+
+  test('should find the node in binary search tree', () => {
+    const bst = new BinarySearchTree()
+    
+    expect(bst.find()).toBeFalsy() // root null
+
+    bst.insert(10)
+    bst.insert(8)
+    bst.insert(9)
+    bst.insert(5)
+    bst.insert(15)
+    bst.insert(11)
+    bst.insert(12)
+    bst.insert(18)
+    bst.insert(20)
+
+    expect(bst.find(10)).toBeTruthy()
+    expect(bst.find(20)).toBeTruthy()
+    expect(bst.find(25)).toBeFalsy()
+    expect(bst.find(0)).toBeFalsy()
+  })
+
+  // const expected = ['Alice', 'Bobh'];
+  // it('matches even if received contains additional elements', () => {
+  //   expect(['Alice', 'Bob', 'Eve']).toEqual(expect.arrayContaining(expected));
+  // });
+
+  test('should traverse as breath first search on binary search tree', () => {
+    const bst = new BinarySearchTree()
+    
+    bst.insert(10)
+    bst.insert(8)
+    bst.insert(9)
+    bst.insert(5)
+    bst.insert(15)
+    bst.insert(11)
+    bst.insert(12)
+    bst.insert(18)
+    bst.insert(20)
+
+    const expected = [10, 8, 15, 5, 9, 11, 18, 12, 20]
+    expect(bst.breadthFirstSearch()).toEqual(expect.arrayContaining(expected))
+  })
+
+  test('should traverse as depth first search pre-order on binary search tree', () => {
+    const bst = new BinarySearchTree()
+    
+    bst.insert(10)
+    bst.insert(8)
+    bst.insert(9)
+    bst.insert(5)
+    bst.insert(15)
+    bst.insert(7)
+    bst.insert(11)
+    bst.insert(12)
+    bst.insert(14)
+    bst.insert(18)
+    bst.insert(16)
+    bst.insert(20)
+
+    const expected = [10, 8, 5, 9, 7, 15, 11, 12, 14, 18, 16, 20]
+    expect(bst.breadthFirstSearch()).toEqual(expect.arrayContaining(expected))
+  })
+
+  test('should traverse as depth first search post-order on binary search tree', () => {
+    const bst = new BinarySearchTree()
+    
+    bst.insert(10)
+    bst.insert(8)
+    bst.insert(9)
+    bst.insert(5)
+    bst.insert(15)
+    bst.insert(7)
+    bst.insert(11)
+    bst.insert(12)
+    bst.insert(14)
+    bst.insert(18)
+    bst.insert(16)
+    bst.insert(20)
+
+    const expected = [5, 7, 9, 8, 14, 12, 11, 16, 20, 18, 15, 10]
+    expect(bst.depthFirstSearchPostOrder()).toEqual(expect.arrayContaining(expected))
+  })
+
+  test('should traverse as depth first search in-order on binary search tree', () => {
+    const bst = new BinarySearchTree()
+    
+    bst.insert(10)
+    bst.insert(8)
+    bst.insert(9)
+    bst.insert(5)
+    bst.insert(15)
+    bst.insert(7)
+    bst.insert(11)
+    bst.insert(12)
+    bst.insert(14)
+    bst.insert(18)
+    bst.insert(16)
+    bst.insert(20)
+
+    const expected = [5, 7, 8, 9, 10, 11, 12, 14, 15, 16, 18, 20]
+    expect(bst.depthFirstSearchInOrder()).toEqual(expect.arrayContaining(expected))
+  })
 })
