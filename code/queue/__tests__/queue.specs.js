@@ -33,7 +33,7 @@ describe('DS :: Queue', () => {
       q.dequeue()
     } catch (error) {
       expect(error).toBeInstanceOf(Error)
-      expect(error).toHaveProperty('message', 'Queue is empty, no element to dequeue');
+      expect(error).toHaveProperty('message', 'Queue is empty, nothing to dequeue');
     }
   })
 
