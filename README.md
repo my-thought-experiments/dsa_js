@@ -9,7 +9,11 @@ npm run test
 
 ## Topics
 
-- [x] Stack
+- [x] Stack (Using Array)
+
+    Variations:
+
+    - [x] Stack (Using Linked List)
 
 - [x] Queue
 
@@ -35,7 +39,7 @@ npm run test
 ----------------------|---------|----------|---------|---------|---------------------
 File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s   
 ----------------------|---------|----------|---------|---------|---------------------
-All files             |   93.52 |    93.81 |     100 |   93.44 |                     
+All files             |   93.97 |    94.17 |     100 |    93.9 |                     
  array                |     100 |      100 |     100 |     100 |                     
   array_chunk.js      |     100 |      100 |     100 |     100 |                     
  linked_list          |   90.29 |    91.43 |     100 |   90.24 |                     
@@ -45,6 +49,7 @@ All files             |   93.52 |    93.81 |     100 |   93.44 |
   queue.js            |     100 |      100 |     100 |     100 |                     
  stack                |     100 |      100 |     100 |     100 |                     
   stack.js            |     100 |      100 |     100 |     100 |                     
+  stackLL.js          |     100 |      100 |     100 |     100 |                     
  string               |   98.72 |    96.97 |     100 |   98.67 |                     
   anagrams.js         |   95.45 |       90 |     100 |   95.45 | 41                  
   fizzbuzz.js         |     100 |      100 |     100 |     100 |                     
@@ -53,8 +58,8 @@ All files             |   93.52 |    93.81 |     100 |   93.44 |
   reverse_int.js      |     100 |      100 |     100 |     100 |                     
   reverse_str.js      |     100 |      100 |     100 |     100 |                     
 ----------------------|---------|----------|---------|---------|---------------------
-Test Suites: 11 passed, 11 total
-Tests:       50 passed, 50 total
+Test Suites: 12 passed, 12 total
+Tests:       53 passed, 53 total
 Snapshots:   0 total
-Time:        0.778 s, estimated 1 s
+Time:        0.902 s, estimated 1 s
 ```

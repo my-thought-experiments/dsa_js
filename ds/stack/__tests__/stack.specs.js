@@ -30,7 +30,7 @@ describe('DS :: Stack', () => {
       stk.pop()
     } catch (error) {
       expect(error).toBeInstanceOf(Error)
-      expect(error).toHaveProperty('message', 'Stack is empty, no element to pop')
+      expect(error).toHaveProperty('message', 'Stack is empty, nothing to pop')
     }
   })
 
