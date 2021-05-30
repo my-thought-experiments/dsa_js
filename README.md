@@ -43,7 +43,7 @@ npm run test
 ----------------------|---------|----------|---------|---------|---------------------
 File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s   
 ----------------------|---------|----------|---------|---------|---------------------
-All files             |   94.37 |    94.49 |     100 |   94.31 |                     
+All files             |   93.44 |    93.21 |   97.62 |   93.38 |                     
  array                |     100 |      100 |     100 |     100 |                     
   array_chunk.js      |     100 |      100 |     100 |     100 |                     
  linked_list          |   90.29 |    91.43 |     100 |   90.24 |                     
@@ -62,9 +62,11 @@ All files             |   94.37 |    94.49 |     100 |   94.31 |
   palindrome.js       |     100 |      100 |     100 |     100 |                     
   reverse_int.js      |     100 |      100 |     100 |     100 |                     
   reverse_str.js      |     100 |      100 |     100 |     100 |                     
+ trees                |   88.41 |    88.57 |   81.82 |   88.41 |                     
+  binarySearchTree.js |   88.41 |    88.57 |   81.82 |   88.41 | 92-108              
 ----------------------|---------|----------|---------|---------|---------------------
-Test Suites: 13 passed, 13 total
-Tests:       56 passed, 56 total
+Test Suites: 14 passed, 14 total
+Tests:       65 passed, 65 total
 Snapshots:   0 total
-Time:        0.886 s, estimated 1 s
+Time:        1.046 s
 ```
