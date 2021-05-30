@@ -2,6 +2,8 @@
 
 ## Setup
 
+Code examples are executed on `Node v12.22.1` and `npm 6.14.12`.
+
 ```
 npm install
 npm run test
