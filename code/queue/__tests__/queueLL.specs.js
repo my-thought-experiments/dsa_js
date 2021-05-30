@@ -1,6 +1,6 @@
 const { Node, Queue } = require('../queueLL')
 
-describe('DS :: Queue using Linked List', () => {
+describe('Queue > Using Linked List', () => {
   test('should create new node with correct default reference', () => {
     let element1 = new Node()
     expect(element1.data).toBeNull()

@@ -1,6 +1,6 @@
 const Stack = require('../stack')
 
-describe('DS :: Stack', () => {
+describe('Stack > Using Array', () => {
   test('should return the position of the newly added an element to the stack', () => {
     const stk = new Stack()
     expect(stk.push(10)).toBe(0)

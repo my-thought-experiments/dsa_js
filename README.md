@@ -2,6 +2,8 @@
 
 ## Setup
 
+Code examples are executed on `Node v12.22.1` and `npm 6.14.12`.
+
 ```
 npm install
 npm run test
@@ -9,33 +11,31 @@ npm run test
 
 ## Topics
 
-- [x] Stack (Using Array)
+- Array
 
-    Variations:
+- String
 
-    - [x] Stack (Using Linked List)
+- Linked List
 
-- [x] Queue (Using Array)
-
-    Variations:
-
-    - [x] Queue (Using Linked List)
-
-- [x] Linked List (Singly Linked List)
-
-    Variations:
+    - [x] Singly Linked List
 
     - [x] Double Linked List
 
-- [ ] Tree
+- Stack
 
-- [ ] Graphs
+    - [x] Stack using Array
 
-- [ ] Hash Table
+    - [x] Stack using Linked List
 
-- [ ] Dynamic Programming
+- Queue
 
-- [ ] Dijkstra's Algorithmx
+    - [x] Queue using Array
+
+    - [x] Queue using Linked List
+
+- Trees
+
+    - [x] Binary Search Tree
 
 ## Test Coverage Reports
 

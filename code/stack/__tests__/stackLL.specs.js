@@ -1,6 +1,6 @@
 const { Node, Stack } = require('../stackLL')
 
-describe('DS :: Stack using Linked List', () => {
+describe('Stack > Using Linked List', () => {
   test('should create new node with correct default reference', () => {
     let element1 = new Node()
     expect(element1.data).toBeNull()
