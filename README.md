@@ -15,7 +15,11 @@ npm run test
 
     - [x] Stack (Using Linked List)
 
-- [x] Queue
+- [x] Queue (Using Array)
+
+    Variations:
+
+    - [x] Queue (Using Linked List)
 
 - [x] Linked List (Singly Linked List)
 
@@ -39,7 +43,7 @@ npm run test
 ----------------------|---------|----------|---------|---------|---------------------
 File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s   
 ----------------------|---------|----------|---------|---------|---------------------
-All files             |   93.97 |    94.17 |     100 |    93.9 |                     
+All files             |   94.37 |    94.49 |     100 |   94.31 |                     
  array                |     100 |      100 |     100 |     100 |                     
   array_chunk.js      |     100 |      100 |     100 |     100 |                     
  linked_list          |   90.29 |    91.43 |     100 |   90.24 |                     
@@ -47,6 +51,7 @@ All files             |   93.97 |    94.17 |     100 |    93.9 |
   singlyLinkedList.js |   92.31 |    94.12 |     100 |   92.23 | 133-141,173         
  queue                |     100 |      100 |     100 |     100 |                     
   queue.js            |     100 |      100 |     100 |     100 |                     
+  queueLL.js          |     100 |      100 |     100 |     100 |                     
  stack                |     100 |      100 |     100 |     100 |                     
   stack.js            |     100 |      100 |     100 |     100 |                     
   stackLL.js          |     100 |      100 |     100 |     100 |                     
@@ -58,8 +63,8 @@ All files             |   93.97 |    94.17 |     100 |    93.9 |
   reverse_int.js      |     100 |      100 |     100 |     100 |                     
   reverse_str.js      |     100 |      100 |     100 |     100 |                     
 ----------------------|---------|----------|---------|---------|---------------------
-Test Suites: 12 passed, 12 total
-Tests:       53 passed, 53 total
+Test Suites: 13 passed, 13 total
+Tests:       56 passed, 56 total
 Snapshots:   0 total
-Time:        0.902 s, estimated 1 s
+Time:        0.886 s, estimated 1 s
 ```
