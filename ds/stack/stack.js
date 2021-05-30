@@ -15,7 +15,7 @@ class Stack {
   pop() {
     if (this.isEmpty()) {
       // Underflow state
-      throw new Error('Stack is empty, no element to pop')
+      throw new Error('Stack is empty, nothing to pop')
     }
 
     const deleteElement = this.elements[this.count - 1]
