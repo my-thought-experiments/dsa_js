@@ -37,6 +37,10 @@ npm run test
 
     - [x] Binary Search Tree
 
+- Graph
+
+    - [x] Simple Graph
+
 ## Test Coverage Reports
 
 ```
