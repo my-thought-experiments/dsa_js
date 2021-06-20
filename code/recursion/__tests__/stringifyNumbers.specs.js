@@ -1,7 +1,7 @@
 const stringifyNumbers = require('../stringifyNumbers')
 
 describe('Recursive functions', () => {
-  test('hello should return array of string from given object', () => {
+  test('should return array of string from given object', () => {
     const sampleObjInput = {
       num1: 5,
       num2: 10,
