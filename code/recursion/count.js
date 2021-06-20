@@ -1,18 +1,21 @@
-const result = []
-
 function count(num) {
-  // Setup base case
-  if (num <= 0) {
-    return false
+  const result = []
+
+  function helper(num) {
+    // Setup base case
+    if (num <= 0) {
+      return false
+    }
+
+    // Just for testing purpose
+    result.push(num)
+
+    // Setup different input
+    num--
+    helper(num)
   }
 
-  // Just for testing purpose
-  result.push(num)
-
-  // Setup different input
-  num--
-  count(num)
-
+  helper(num)
   return result
 }
 
